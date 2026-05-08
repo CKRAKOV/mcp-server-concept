@@ -13,6 +13,9 @@ param appName string
 @description('The name of the image to deploy')
 param imageName string
 
+@description('The tag of the image to deploy')
+param imageTag string = 'latest'
+
 @description('The name of the shared Azure Container Registry (without .azurecr.io)')
 param acrName string
 
@@ -72,7 +75,7 @@ module containerApp 'br/public:avm/res/app/container-app:0.19.0' = {
     containers: [
       {
         name: environmentName
-        image: '${acrName}.azurecr.io/${imageName}:latest'
+        image: '${acrName}.azurecr.io/${imageName}:${imageTag}'
         resources: {
           cpu: '0.25'
           memory: '0.5Gi'
