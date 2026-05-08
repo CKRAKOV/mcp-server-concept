@@ -148,11 +148,10 @@ echo $SP_JSON | gh secret set AZURE_CREDENTIALS --app actions
 The shared ACR name is stored as a repository variable for both environments (both point to the same registry):
 
 ```
-gh variable set ACR_NAME_DEV --body "{AcrName}"
-gh variable set ACR_NAME_PROD --body "{AcrName}"
+gh variable set ACR_NAME --body "{AcrName}"
 ```
 
-The CI/CD docker-publish template selects the right variable automatically: branches named `main` use `ACR_NAME_PROD`, all other branches use `ACR_NAME_DEV`. Since both point to the same ACR, images are always pushed to the shared registry.
+The CI/CD docker-publish template uses the shared `ACR_NAME` variable to push images to the registry for all environments.
 
 ### Step 9 — Completion checklist
 

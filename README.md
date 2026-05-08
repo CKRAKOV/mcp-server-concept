@@ -100,7 +100,7 @@ This guided prompt will:
 - Collect your environment name, location, and subscription ID
 - Deploy all shared Azure infrastructure (`Infrastructure/main.bicep`)
 - Create a service principal and store its credentials as the `AZURE_CREDENTIALS` GitHub secret
-- Set the `ACR_NAME_DEV` and `ACR_NAME_PROD` Actions variables (both pointing to the same shared registry)
+- Set the `ACR_NAME` Actions variable (shared registry used by all environments)
 
 See [docs/setup-deployment.md](docs/setup-deployment.md) for a detailed walkthrough.
 
