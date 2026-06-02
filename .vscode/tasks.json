@@ -1,4 +1,15 @@
 {
   "version": "2.0.0",
-  "tasks": []
+  "tasks": [
+    {
+      "label": "build CatMcp",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/MCPServers/CatMcp/CatMcp.csproj"
+      ],
+      "problemMatcher": "$msCompile"
+    }
+  ]
 }

@@ -1,4 +1,18 @@
 {
   "version": "0.2.0",
-  "configurations": []
+  "configurations": [
+    {
+      "name": "CatMcp",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build CatMcp",
+      "program": "${workspaceFolder}/MCPServers/CatMcp/bin/Debug/net9.0/CatMcp.dll",
+      "cwd": "${workspaceFolder}/MCPServers/CatMcp",
+      "stopAtEntry": false,
+      "console": "internalConsole",
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  ]
 }
